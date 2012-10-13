@@ -39,7 +39,9 @@ public interface TweenCallback {
 	public static final int BACK_COMPLETE = 0x80;
 	public static final int ANY_FORWARD = 0x0F;
 	public static final int ANY_BACKWARD = 0xF0;
-	public static final int ANY = 0xFF;
+	public static final int SYNC_COMPLETE = 0x100;
+	public static final int ANY = 0x1FF;
+	
 
 	public void onEvent(int type, BaseTween<?> source);
 }
