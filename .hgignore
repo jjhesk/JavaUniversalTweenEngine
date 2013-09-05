@@ -1,5 +1,7 @@
 syntax: glob
 
+.metadata/*
+bin/*
 *.zip
 
 tween-engine-api/manifest.mf

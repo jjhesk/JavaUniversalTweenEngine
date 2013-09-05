@@ -164,8 +164,24 @@ public class TweenManager {
 		if (!isPaused) {
 			if (delta >= 0) {
 				for (int i=0, n=objects.size(); i<n; i++) objects.get(i).update(delta);
+				for (int i=0, n=objects.size(); i<n; i++) 
+				{
+				   BaseTween<?> obj = objects.get(i);
+				   if (obj.isFinished())
+				   {
+				      obj.callCallback(TweenCallback.SYNC_COMPLETE);
+				   }
+				}
 			} else {
 				for (int i=objects.size()-1; i>=0; i--) objects.get(i).update(delta);
+				for (int i=objects.size()-1; i>=0; i--)
+				{
+				   BaseTween<?> obj = objects.get(i);
+               if (obj.isFinished())
+               {
+                  obj.callCallback(TweenCallback.SYNC_COMPLETE);
+               }
+				}
 			}
 		}
 	}
